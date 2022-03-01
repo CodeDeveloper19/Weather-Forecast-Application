@@ -1,0 +1,593 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("weather/noaa-ZVhm6rEKEX8-unsplash.jpg");
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+}
+
+/*****************Border Radiuses of major elements ************************/
+.container, .stuff, .stuff1{
+    border-radius: 20px;
+}
+/**************************************************************************/
+
+.container{
+    display: flex;
+    background: #1a2a6c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 85%;
+    width: 85%;
+}
+
+.container1{
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+    /* width: 45%; */
+}
+
+.main{
+    position: absolute;
+    bottom: 10%;
+    left: 0%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    color:rgb(255, 255, 255);;
+    width: 100%;
+
+}
+
+.a{
+    display: flex;
+    align-items: center;
+}
+
+.b{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 45%;
+}
+
+.c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sunsets img{
+    max-height: 8%; 
+    max-width: 8%;
+}
+
+.sunsets img, .cityy img{
+    padding-right: 4%;
+}
+
+#city, #country, .cityy h5 {
+    display: flex;
+    justify-content: center;
+}
+
+#country{
+    margin-left: 3%;
+}
+
+.cityy {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 15%;
+}
+
+.cityy img{
+    max-height: 80%;
+    max-width: 80%;
+}
+
+.sunsets p{
+    display: flex;
+    align-items: flex-end;
+}
+
+.sunrise, .sunset {
+    display: flex;
+    flex-direction: row;
+    /* padding-left: 10%; */
+}
+
+.a {
+    padding: 0 2% 0 8%;
+}
+
+#emoji{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.main1{
+    position: relative;
+    height: 100%;
+}
+
+
+#rainstorm{
+    height: 100%;
+    width: 150%;
+    -webkit-transition: all 10s ease;
+    -moz-transition: all 10s ease;
+    -o-transition: all 10s ease;
+    -ms-transition: all 10s ease;
+    transition: all 10s ease;
+}
+
+#rainstorm:hover {
+border-radius: 20px 0px 0px 20px;
+transform: scale(1.5);
+cursor: pointer;
+}
+
+/**********************************This is for the second container*****************************/
+
+.container2{
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-align{
+    position: absolute;
+    top: 86%;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.weather{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 40%; /*******************************************************/
+    color: white;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: row-reverse;
+}
+
+.info{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#weathericon{
+    max-height: 100%;
+    max-height: 100%;
+}
+
+.stuff, .stuff1{
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 90%;
+    height: 40%;
+}
+
+.stuff1 li{
+    padding-bottom: .5%;
+}
+
+.option1 li:hover{
+    cursor: pointer;
+    border-bottom: 1px solid #e1ad01;
+}
+
+.active {
+    border-bottom: 1px solid white;  /*This is what makes the days, month, 3 months, e.t.c. turn the bottom blue*/
+}
+
+.stuff{
+    position: relative;
+    margin-top: 4%;
+    width: 90%;
+    height: 40%;
+}
+
+.stuff1{
+    margin-top: 3%;
+    height: 50%;
+    margin-bottom: 4%;
+}
+
+.option1{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 5% 0 5%;
+    height: 8%;
+    justify-content: space-between;
+}
+
+#option2{
+    height: 70%;
+    margin: 3% 5% 0 5%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.option4 img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.option3{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+}
+
+.option3 p{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option45{
+    border-right: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+/**************************************************PieChart************************************************************/
+/* .fullsection{
+    position: absolute;
+    height: 45%;
+    width: 300%;
+    top: 55%;
+    display: flex;
+    flex-direction: row;
+} */
+
+.piecharts{
+    position: absolute;
+    height: 45%;
+    width: 100%;
+    top: 55%;
+    display: flex;
+    flex-direction: row;
+}
+
+.piecharts1, .piecharts2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 50%;
+    padding-left: 5%;
+}
+
+#mypiechart1, #mypiechart2{
+    position: absolute;
+    left: 10%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.piechart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information{
+    position: absolute;
+    left: 40%;
+    width: 50%;
+}
+
+.informations{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.informations h4{
+    margin: 0 2% 0 2%;
+}
+
+.box1, .box2, .box3, .box4{
+    width: 5px;
+    height: 5px;
+    border: 1px solid black;
+}
+
+.box1{
+    background-color: #7689de;
+}
+
+.box2{
+    background-color: #a9dce3;
+}
+
+.box3{
+    background-color: rgb(2, 2, 143);
+}
+
+.box4{
+    background-color: #7689de;
+}
+/*******************************************************************************************************************/
+
+/******************************This is for the progress bar used for the temperature***********************************/
+
+progress{
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: none;
+    height: 25%;
+}
+
+.option45 progress::-webkit-progress-value {
+    background-color: rgb(92, 92, 245);
+    border-radius: 10px 0 0 10px;
+}
+
+.option45 progress::-moz-progress-bar{   /*This allows us to be able to style the progress bar for mozilla firefox browsers*/
+    background-color: rgb(92, 92, 245);
+    border-radius: 10px 0 0 10px;
+}
+
+.option4 progress::-moz-progress-bar{    /*This allows us to be able to style the progress bar for mozilla firefox browsers*/
+    background-color: red;
+    border-radius: 0 10px 10px 0;
+}
+
+.option4 progress::-webkit-progress-value {
+    background: red;
+    border-radius: 0 10px 10px 0;
+}
+
+/***********************************************************************************************************/
+.option4, .option45{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/************************For the input part ********************************/
+.input{
+    background-color: rgba(41, 40, 40, 0.1);
+    border-radius: 40px;
+    width: 35%;
+    height: 10%;
+    left: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+::placeholder { /*This changes the color of the text used as the placeholder*/
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+#search{
+    background-color: rgba(41, 40, 40, 0.1);
+    position: absolute;
+    border-radius: 0 40px 40px 0;
+    left: 15%;
+    margin-top: 30px;
+    width: 85%;
+    height: 100%;
+    bottom: 0px;
+    border: 0;
+    outline: none; /*This line of code makes the borderline to be hidden when the search bar is clicked*/
+    color: white;
+}
+
+#search2{
+    position: relative;
+    width: 10%;
+    height: 10%;
+    left: 42%;
+    bottom: 10%;
+    background-color: rgba(41, 40, 40, 0.1);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#search2:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgba(172, 172, 172, 0.1);
+}
+
+.search{
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    width: 10%;
+}
+
+.search img{
+    max-width: 60%;
+    max-height: 60%;
+}
+
+#search:active{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.input:hover{
+    background-color: rgba(172, 172, 172, 0.1);
+}
+/********************************************************************************/
+
+/****************************************This is for the fonts*********************************************/
+.info, #option2, #option22, #option222, #option2222, #option22222, #option222222{
+    font-family: 'Lato', sans-serif;
+}
+
+#option2, #option22, #option222, #option2222, #option22222, #option222222{
+    font-size: .7vw;
+}
+
+#city, #country, .cityy h5{
+    font-size: .7vw;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.sunsets p{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: .7vw;
+}
+
+#temperature, .deg {
+    font-size: 3.7vw;
+    font-family: 'Lato', sans-serif;
+}
+
+.info h2{
+    font-size: 1.3vw;
+    font-weight: 700;
+}
+
+.info p{
+    font-size: .8vw; 
+    font-weight: 300;
+}  
+
+#search{
+    font-size: 16px;
+}
+
+.stuff1 li{
+    font-family: 'Open Sans', sans-serif;
+    font-size: .8vw;
+    font-weight: 400;
+    color: whitesmoke;
+}
+
+.piecharts h4, .piecharts h5{
+    font-size: .7vw;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+/**********************************************************************************************************/
+
+/*************************************************Displays of the other options such as day and 3 months****************************************/
+
+/************************************************** Day (Hourly) *******************************************************************************/
+#option22{
+    height: 70%;
+    margin: 3% 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+/*******************************************************************************************************************************************/
+
+/************************************************** Monthly*******************************************************************************/
+#option222{
+    height: 70%;
+    margin: 3% 5% 0 5%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+/*******************************************************************************************************************************************/
+
+/**************************************************Per 3 Months*******************************************************************************/
+#option2222{
+    height: 70%;
+    margin: 3% 5% 0 5%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*******************************************************************************************************************************************/
+
+/**************************************************Per 6 Months*******************************************************************************/
+#option22222{
+    height: 70%;
+    margin: 3% 5% 0 5%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/*******************************************************************************************************************************************/
+
+/***********************************************Yearly*************************************************************/
+#option222222{
+    height: 70%;
+    margin: 3% 5% 0 5%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+/******************************************************************************************************************/
+
+/***********************************************************************************************************************************************/
+
+
+/************************************Scrollbar***************************************************/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;  /********For the outer part*************/
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(207, 207, 207, 0.8); /********For the part that scrolls*************/
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+/**********************************************************************************************/

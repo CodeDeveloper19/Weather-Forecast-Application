@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Open+Sans&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="container1">
+            <div class="main1">
+                <img src="weather/rainstorm.jpg" id="rainstorm">
+                <div class = "main">
+                    <div class="a"><p id="temperature">19<p class="deg">°</p></div>
+                    <div class="b">
+                        <div class="cityy">
+                            <img src="other icons/icons8-place-marker-96.png">
+                            <p id="city">Lagos<h5>,</h5><h5 id="country">Nigeria</h5></p>
+                        </div>
+                        <div class="sunsets">
+                            <div class="sunrise">
+                                <img src="weather icons/icons8-sunrise-96.png">
+                                <p id="up">8:20 am <p>(Sunrise)</p></p>
+                            </div>
+                            <div class="sunset">
+                                <img src="weather icons/icons8-sunset-96.png">
+                                <p id="down">6:20 pm <p>(Sunset)</p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c"><img src ="emojis/icons8-downcast-face-with-sweat-96.png" id="emoji"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="stuff">
+                <div class="input">
+                    <div class="search"><img src="other icons/search.svg"></div>
+                    <div><input id="search" type="text" name="nameofcity" autofocus placeholder=" Search for..."/> <!--The autofocus makes the input vertical line to be blinking--></div>
+                </div>
+                <button id="search2">Submit</button>
+                <div class="weather">
+                    <img src="weather icons/icons8-blizzard-64.png" id="weathericon">
+                    <div class="info">
+                        <h2 id="condition">Moderate or heavy showers of ice pellets</h2>
+                        <p id="time">06:20:25pm GMT</p> 
+                    </div>
+                </div>
+                <div class="fullsection">
+                    <div class="piecharts">
+                        <div class="piecharts1">
+                            <img id="mypiechart1" src="weather icons/icons8-rain.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box1"></div>
+                                    <h4>Chance of Raining:</h4>
+                                    <h5 id="chanceofrain">45<h5>%</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box2"></div>
+                                    <h4>Chance of Not Raining:</h4>
+                                    <h5 id="chanceofnorain">55<h5>%</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piecharts2">
+                            <img id="mypiechart2" src="weather icons/icons8-snow.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box3"></div>
+                                    <h4>Chance of Snowing:</h4>
+                                    <h5 id="chanceofsnow">30<h5>%</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box4"></div>
+                                    <h4>Chance of Not Snowing:</h4>
+                                    <h5 id="chanceofnosnow">70<h5>%</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="stuff1">
+                <ul style="list-style: none;" class="option1">
+                    <li onclick="clicking1()" id="day" class="active">Day</li>
+                    <li onclick="clicking2()" id="week">Week</li>
+                    <li onclick="clicking3()" id="month">Month</li>
+                    <li onclick="clicking4()" id="threemonths">3 Months</li>
+                    <li onclick="clicking5()" id="sixmonths">6 Months</li>
+                    <li onclick="clicking6()" id="year">Year</li>
+                </ul>
+                <ul style="list-style: none;" id="option2">
+                    <li class="option3">
+                        <p>Monday</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>Tuesday</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>Wednesday</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>Thursday</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>Friday</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>Saturday</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>Sunday</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                </ul>
+                <ul style="list-style: none;" id="option22">
+                    <li class="option3">
+                        <p>00:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity0">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature0">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature0"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>01:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity1">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature1">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature1"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>02:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity2">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature2">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature2"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>03:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity3">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature3">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature3"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>04:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity4">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature4">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature4"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>05:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity5">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature5">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature5"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>06:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity6">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature6">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature6"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>07:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity7">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature7">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature7"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>08:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity8">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature8">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature8"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>09:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity9">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature9">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature9"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>10:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity10">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature10">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45"> 
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature10"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>11:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity11">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature11">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature11"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>12:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity12">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature12">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature12"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>13:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity13">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature13">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature13"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>14:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity14">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature14">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature14"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>15:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity15">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature15">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature15"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>16:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity16">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature16">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature16"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress> 
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>17:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity17">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature17">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature17"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>18:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity18">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature18">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature18"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>19:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity19">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature19">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature19"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>20:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity20">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature20">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature20"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>21:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity21">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature21">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature21"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>22:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity22">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature22">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature22"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>23:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity23">54<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4 class="lowtemperature23">14<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl" class="lowtemperature23"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24" class="hightemperature"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">24<h4>°</h4></h4>
+                        </div>
+                    </li>
+                </ul>
+                <ul style="list-style: none;" id="option222">
+                    <li class="option3">
+                        <p>1st</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>2nd</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>3rd</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>4th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>5th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>6th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>7th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>8th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>9th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>10th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>11th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>12th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>13th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>14th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>15th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>16th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>17th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>18th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>19th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>20th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>21st</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>22nd</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>23rd</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>24th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>25th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>26th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>27th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>28th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>29th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>30th</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>31st</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                </ul>
+                <ul style="list-style: none;" id="option2222">
+                    <li class="option3">
+                        <p>January</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>February</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>March</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                </ul>
+                <ul style="list-style: none;" id="option22222">
+                    <li class="option3">
+                        <p>January</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>February</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>March</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>April</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>May</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>June</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                </ul>
+                <ul style="list-style: none;" id="option222222">
+                    <li class="option3">
+                        <p>January</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>February</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>March</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>April</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>May</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>June</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>July</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>August</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>September</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>October</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>November</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>December</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4>54%</h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png">
+                        </div>
+                        <div class="option4">
+                            <h4>14°</h4>
+                        </div>
+                        <div class="option45">
+                            <progress max="50" value="14" style="direction:rtl"> <!--The direction:rtl makes the progress bar start counting from right to left-->
+                            </progress>
+                        </div>
+                        <div class="option4">
+                            <progress max="50" value="24"></progress>
+                        </div>
+                        <div class="option4">
+                            <h4>24°</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="./weather.js"></script>
+<script src="./navigation bar functionality.js"></script>
+</html>
