@@ -52,7 +52,7 @@
                         <p id="time">06:20:25pm GMT</p> 
                     </div>
                 </div>
-                <div class="fullsection">
+                <div id="fullsection">
                     <div class="piecharts">
                         <div class="piecharts1">
                             <img id="mypiechart1" src="weather icons/icons8-rain.gif">
@@ -85,8 +85,71 @@
                             </div>
                         </div>
                     </div>
+                    <div class="piecharts00">
+                        <div class="piecharts1">
+                            <img id="mypiechart1" src="weather icons/icons8-wind.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box1"></div>
+                                    <h4>Wind Degree:</h4>
+                                    <h5 id="winddegree">45<h5>°</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box2"></div>
+                                    <h4>Wind Speed:</h4>
+                                    <h5 id="windspeed">55<h5>Kph/</h5><h5 id="windspeedmile">55<h5>mph</h5></h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box11"></div>
+                                    <h4>Wind Direction:</h4>
+                                    <h5 id="winddirection">55<h5>🧭</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piecharts2">
+                            <img id="mypiechart2" src="weather icons/icons8-rain-sensor-80.png">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box3"></div>
+                                    <h4>Precipitation Linear Depth:</h4>
+                                    <h5 id="precipitation">30<h5>mm</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="piecharts000">
+                        <div class="piecharts1">
+                            <img id="mypiechart1" src="weather icons/icons8-pressure-80.png">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box1"></div>
+                                    <h4>Pressure (Milibar):</h4>
+                                    <h5 id="pressure">45<h5>mb</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box2"></div>
+                                    <h4>Pressure (Inch):</h4>
+                                    <h5 id="pressure2">55<h5>in</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piecharts2">
+                            <img id="mypiechart2" src="weather icons/icons8-uv-index-256.png">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box3"></div>
+                                    <h4>Ultraviolet Index Level:</h4>
+                                    <h5 id="ultraviolet">30<h5>uv</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+                <div class="switcher">
+                    <div id="switcher1" onclick="switch1()"></div>
+                    <div id="switcher2" onclick="switch2()"></div>
+                    <div id="switcher3" onclick="switch3()"></div>
+                </div>
             </div>
 
             <div class="stuff1">
@@ -2026,4 +2089,5 @@
 </body>
 <script src="./weather.js"></script>
 <script src="./navigation bar functionality.js"></script>
+<script src="slider.js"></script>
 </html>

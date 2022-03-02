@@ -187,6 +187,7 @@ cursor: pointer;
     height: 40%;
 }
 
+
 .stuff1 li{
     padding-bottom: .5%;
 }
@@ -205,6 +206,7 @@ cursor: pointer;
     margin-top: 4%;
     width: 90%;
     height: 40%;
+    overflow: hidden;
 }
 
 .stuff1{
@@ -253,22 +255,112 @@ cursor: pointer;
 }
 
 /**************************************************PieChart************************************************************/
-/* .fullsection{
-    position: absolute;
-    height: 45%;
+#fullsection{
+    position: relative;
+    height: 40%;
     width: 300%;
-    top: 55%;
+    top: 20%;
+    left: 0;
     display: flex;
     flex-direction: row;
-} */
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
-.piecharts{
+@keyframes animation1{
+    0%{
+        left: -700px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes animation2{
+    0%{
+        left: -1400px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes animation3{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -700px;
+    }
+}
+
+@keyframes animation4{
+    0%{
+        left: -1400px;
+    }
+    100%{
+        left: -700px;
+    }
+}
+
+@keyframes animation5{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -1400px;
+    }
+}
+
+@keyframes animation6{
+    0%{
+        left: -700px;
+    }
+    100%{
+        left: -1400px;
+    }
+}
+
+
+.piecharts, .piecharts00, .piecharts000{
     position: absolute;
-    height: 45%;
-    width: 100%;
-    top: 55%;
+    height: 100%;
+    width: 33.3%;
     display: flex;
     flex-direction: row;
+}
+
+.switcher{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#switcher1, #switcher2, #switcher3{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 10px;
+}
+
+#switcher1:hover, #switcher2:hover, #switcher3:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.piecharts00{
+    left: 700px;
+}
+
+.piecharts000{
+    left: 1400px;
 }
 
 .piecharts1, .piecharts2{
@@ -313,7 +405,7 @@ cursor: pointer;
     margin: 0 2% 0 2%;
 }
 
-.box1, .box2, .box3, .box4{
+.box1, .box2, .box11, .box3, .box4{
     width: 5px;
     height: 5px;
     border: 1px solid black;
@@ -503,7 +595,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     color: whitesmoke;
 }
 
-.piecharts h4, .piecharts h5{
+#fullsection h4, #fullsection h5{
     font-size: .7vw;
     color: white;
     font-family: 'Lato', sans-serif;
@@ -575,7 +667,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   }
   
   /* Track */
-  ::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track{
     background: #f1f1f1;  /********For the outer part*************/
     border-radius: 10px;
   }
