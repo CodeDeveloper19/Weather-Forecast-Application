@@ -441,8 +441,8 @@
 }
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width : 1441px) {
+/* @media only screen and (min-width : 1441px) {
     body{
         display: none;
     }
-}
+} */

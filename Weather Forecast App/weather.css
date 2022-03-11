@@ -14,18 +14,30 @@ body{
 }
 
 /*****************Border Radiuses of major elements ************************/
-.container, .stuff, .stuff1{
+#container, .stuff, .stuff1{
     border-radius: 20px;
 }
 /**************************************************************************/
 
-.container{
+#container{
     display: flex;
-    background: #1a2a6c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     height: 85%;
     width: 85%;
+    /* background: #1a2a6c;
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); */
+}
+
+.background1 {
+    background: #0f0c29;  
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+.background2 {
+    background: #1a2a6c;
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
 }
 
 .container1{
@@ -45,7 +57,11 @@ body{
     flex-direction: row;
     color:rgb(255, 255, 255);;
     width: 100%;
-
+    opacity: 0;
+    animation-name: opacity;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+    animation-delay: 2.5s;
 }
 
 .a{
@@ -119,6 +135,18 @@ body{
 .main1{
     position: relative;
     height: 100%;
+    animation-name: main1;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+}
+
+@keyframes main1 {
+    0%{
+        right: 400px;
+    }
+    100%{
+        right: 0px;
+    }
 }
 
 
@@ -158,7 +186,7 @@ cursor: pointer;
     margin-top: 2%;
 }
 
-.weather{
+#weather{
     position: absolute;
     right: 5%;
     top: 5%;
@@ -166,7 +194,22 @@ cursor: pointer;
     color: white;
     display: flex;
     /* justify-content: space-between; */
+    opacity: 0;
     flex-direction: row-reverse;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes opacity{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 .info{
@@ -207,20 +250,40 @@ cursor: pointer;
     width: 90%;
     height: 40%;
     overflow: hidden;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 .stuff1{
     margin-top: 3%;
     height: 50%;
     margin-bottom: 4%;
+    overflow-x: hidden;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 .option1{
     display: flex;
     flex-direction: row;
     padding: 2% 5% 0 5%;
+    position: relative;
     height: 8%;
     justify-content: space-between;
+    animation-name: slideleft;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideleft {
+    0%{
+        left: 1000px;
+    }
+    100%{
+        left: 0;
+    }
 }
 
 #option2{
@@ -237,10 +300,24 @@ cursor: pointer;
 }
 
 .option3{
+    position: relative;
     display: flex;
     flex-direction: row;
     height: 10%;
     width: 100%;
+    top: 300px;
+    animation-name: slideup;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideup {
+    0%{
+        top: 200px;
+    }
+    100%{
+        top: 0;
+    }
 }
 
 .option3 p{
@@ -329,6 +406,11 @@ cursor: pointer;
     width: 33.3%;
     display: flex;
     flex-direction: row;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
 }
 
 .switcher{
@@ -340,6 +422,11 @@ cursor: pointer;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
 }
 
 #switcher1, #switcher2, #switcher3{
@@ -430,36 +517,35 @@ cursor: pointer;
 
 /******************************This is for the progress bar used for the temperature***********************************/
 
-progress{
+.lowtemperature, .hightemperatures{
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
     border: none;
     height: 25%;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
-.option45 progress::-webkit-progress-value {
+.hightemperatures{
+    flex-direction: row;
+}
+
+.lowtempprogress{
+    height: 100%;
     background-color: rgb(92, 92, 245);
     border-radius: 10px 0 0 10px;
 }
 
-.option45 progress::-moz-progress-bar{   /*This allows us to be able to style the progress bar for mozilla firefox browsers*/
-    background-color: rgb(92, 92, 245);
-    border-radius: 10px 0 0 10px;
-}
-
-.option4 progress::-moz-progress-bar{    /*This allows us to be able to style the progress bar for mozilla firefox browsers*/
+.hightempprogress{
+    height: 100%;
     background-color: red;
     border-radius: 0 10px 10px 0;
+    /* width: 60%; */
 }
-
-.option4 progress::-webkit-progress-value {
-    background: red;
-    border-radius: 0 10px 10px 0;
-}
-
 /***********************************************************************************************************/
 .option4, .option45{
-    width: 40%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -478,6 +564,11 @@ progress{
     display: flex;
     flex-direction: row;
     margin-top: 30px;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
 ::placeholder { /*This changes the color of the text used as the placeholder*/
@@ -509,6 +600,11 @@ progress{
     border: none;
     border-radius: 10px;
     color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
 #search2:hover{
