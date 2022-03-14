@@ -5,12 +5,20 @@
 
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url("weather/noaa-ZVhm6rEKEX8-unsplash.jpg");
     backdrop-filter: blur(5px);
     height: 100vh;
     width: 100vw;
+}
+
+#attribution img{
+    max-width: 80px;
+    max-height: 60px;
+    position: absolute;
+    right: 10px;
 }
 
 /*****************Border Radiuses of major elements ************************/
@@ -50,10 +58,8 @@ body{
 
 .main{
     position: absolute;
-    bottom: 10%;
-    left: 0%;
+    margin-bottom: 30px;
     display: flex;
-    justify-content: flex-start;
     flex-direction: row;
     color:rgb(255, 255, 255);;
     width: 100%;
@@ -134,6 +140,8 @@ body{
 
 .main1{
     position: relative;
+    display: flex;
+    align-items: flex-end;
     height: 100%;
     animation-name: main1;
     animation-fill-mode: forwards;
@@ -152,7 +160,7 @@ body{
 
 #rainstorm{
     height: 100%;
-    width: 150%;
+    width: 100%;
     -webkit-transition: all 10s ease;
     -moz-transition: all 10s ease;
     -o-transition: all 10s ease;
@@ -230,11 +238,6 @@ cursor: pointer;
     height: 40%;
 }
 
-
-.stuff1 li{
-    padding-bottom: .5%;
-}
-
 .option1 li:hover{
     cursor: pointer;
     border-bottom: 1px solid #e1ad01;
@@ -268,13 +271,22 @@ cursor: pointer;
 .option1{
     display: flex;
     flex-direction: row;
-    padding: 2% 5% 0 5%;
+    justify-content: center;
+    align-items: center;
+    /* padding: 2% 5% 0 5%; */
     position: relative;
-    height: 8%;
-    justify-content: space-between;
+    height: 45px;
     animation-name: slideleft;
     animation-duration: 2.5s;
     animation-fill-mode: forwards;
+}
+
+#contain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
 }
 
 @keyframes slideleft {
@@ -288,10 +300,17 @@ cursor: pointer;
 
 #option2{
     height: 70%;
-    margin: 3% 5% 0 5%;
+    margin: 0 5% 0 5%;
     display: none;
     flex-direction: column;
-    justify-content: space-between;
+    overflow: hidden;
+}
+
+.days{
+    width: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .option4 img{
@@ -318,13 +337,6 @@ cursor: pointer;
     100%{
         top: 0;
     }
-}
-
-.option3 p{
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .option45{
@@ -537,7 +549,7 @@ cursor: pointer;
     border-radius: 10px 0 0 10px;
 }
 
-.hightempprogress{
+.hightempprogress, #hightempprogress00, #hightempprogress01, #hightempprogress02{
     height: 100%;
     background-color: red;
     border-radius: 0 10px 10px 0;
@@ -645,12 +657,8 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 /********************************************************************************/
 
 /****************************************This is for the fonts*********************************************/
-.info, #option2, #option22, #option222, #option2222, #option22222, #option222222{
+.info, #option2, #option22{
     font-family: 'Lato', sans-serif;
-}
-
-#option2, #option22, #option222, #option2222, #option22222, #option222222{
-    font-size: .7vw;
 }
 
 #city, #country, .cityy h5{
@@ -686,8 +694,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 .stuff1 li{
     font-family: 'Open Sans', sans-serif;
-    font-size: .8vw;
+    font-size: 12px;
     font-weight: 400;
+    padding-bottom: 5px;
     color: whitesmoke;
 }
 
@@ -699,59 +708,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 /**********************************************************************************************************/
 
 /*************************************************Displays of the other options such as day and 3 months****************************************/
-
 /************************************************** Day (Hourly) *******************************************************************************/
 #option22{
     height: 70%;
-    margin: 3% 5% 0 5%;
+    margin: 0 5% 0 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     overflow-y: auto;
 }
 /*******************************************************************************************************************************************/
-
-/************************************************** Monthly*******************************************************************************/
-#option222{
-    height: 70%;
-    margin: 3% 5% 0 5%;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: auto;
-}
-/*******************************************************************************************************************************************/
-
-/**************************************************Per 3 Months*******************************************************************************/
-#option2222{
-    height: 70%;
-    margin: 3% 5% 0 5%;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-}
-/*******************************************************************************************************************************************/
-
-/**************************************************Per 6 Months*******************************************************************************/
-#option22222{
-    height: 70%;
-    margin: 3% 5% 0 5%;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-}
-/*******************************************************************************************************************************************/
-
-/***********************************************Yearly*************************************************************/
-#option222222{
-    height: 70%;
-    margin: 3% 5% 0 5%;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow-y: scroll;
-}
-/******************************************************************************************************************/
 
 /***********************************************************************************************************************************************/
 

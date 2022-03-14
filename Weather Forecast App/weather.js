@@ -51,6 +51,9 @@ var lowtemperature21 = document.getElementById("lowtemperature21");
 var lowtemperature22 = document.getElementById("lowtemperature22");
 var lowtemperature23 = document.getElementById("lowtemperature23");
 
+var lowtemperature00 = document.getElementById("lowtemperature00");
+var lowtemperature01 = document.getElementById("lowtemperature01");
+var lowtemperature02 = document.getElementById("lowtemperature02");
 
 var lowtempprogress0 = document.getElementById("lowtempprogress0");
 var lowtempprogress1 = document.getElementById("lowtempprogress1");
@@ -102,6 +105,10 @@ var humidity21 = document.getElementById("humidity21");
 var humidity22 = document.getElementById("humidity22");
 var humidity23 = document.getElementById("humidity23");
 
+var humidity00 = document.getElementById("humidity00");
+var humidity01 = document.getElementById("humidity01");
+var humidity02 = document.getElementById("humidity02");
+
 var weather0 = document.getElementById("weathericon0");
 var weather1 = document.getElementById("weathericon1");
 var weather2 = document.getElementById("weathericon2");
@@ -126,6 +133,14 @@ var weather20 = document.getElementById("weathericon20");
 var weather21 = document.getElementById("weathericon21");
 var weather22 = document.getElementById("weathericon22");
 var weather23 = document.getElementById("weathericon23");
+
+var weather00 = document.getElementById("weathericon00");
+var weather01 = document.getElementById("weathericon01");
+var weather02 = document.getElementById("weathericon02");
+
+var lowtemperature00 = document.getElementById("lowtempprogress00")
+var lowtemperature01 = document.getElementById("lowtempprogress01")
+var lowtemperature02 = document.getElementById("lowtempprogress02")
 
 
 var animationsRefresh = () => {
@@ -179,7 +194,7 @@ const click = () => (
                         temperature.innerHTML = (parseFloat(temperature.innerHTML) + .1).toFixed(1);
                     }
                 }
-            },20)
+            },10)
 
             setInterval (() => {
                 if (temperature.innerHTML == temp) {
@@ -189,7 +204,7 @@ const click = () => (
             }, 10)
 
             currentCondition.innerHTML = condition;
-            time.innerHTML = data.location.localtime;
+            time.innerHTML = data.location.localtime
             sunrise.innerHTML = data.forecast.forecastday[0].astro.sunrise;
             sunset.innerHTML = data.forecast.forecastday[0].astro.sunset;
             country.innerHTML = data.location.country;
@@ -208,82 +223,46 @@ const click = () => (
             ultraviolet.innerHTML = data.current.uv;
 /**************************************************This is the functionality for changing the value of the temperature for the hours of the day********************* */
 var lowtemperatures = [lowtemperature0, lowtemperature1, lowtemperature2, lowtemperature3, lowtemperature4, lowtemperature5, lowtemperature6, lowtemperature7, lowtemperature8, lowtemperature9,  lowtemperature10, lowtemperature11, lowtemperature12, lowtemperature13, lowtemperature14, lowtemperature15, lowtemperature16, lowtemperature17, lowtemperature18, lowtemperature19, lowtemperature20, lowtemperature21, lowtemperature22, lowtemperature23]
-var setIntervalTimer;
-
-// if (data.forecast.forecastday[0].day.maxtemp_c % 1 != 0){
-//     setIntervalTimer = 1;
-// } else {
-//     setIntervalTimer = 20;
-// }
 for (var i = 0; i < 24; i++){
     lowtemperatures[i].innerHTML = data.forecast.forecastday[0].hour[i].temp_c;
-}
-
-for (var i = 0; i < 24; i++){
     hightemperature[i].innerHTML = data.forecast.forecastday[0].day.maxtemp_c;
     hightempprogress[i].style.width = "0%";
 }
 
 if (data.forecast.forecastday[0].day.maxtemp_c > 0){
-    var hightemp = setInterval(() => {
-        if (data.forecast.forecastday[0].day.maxtemp_c % 1 == 0){
-            for (let v = 0; v < 24; v++){
-                hightempprogress[v].style.width = (parseInt(hightempprogress[1].style.width) + 1) + "%";}
-            }
-        else if (data.forecast.forecastday[0].day.maxtemp_c % 1 != 0){
-            for (let v = 0; v < 24; v++){
-                hightempprogress[v].style.width = ((parseFloat(hightempprogress[1].style.width) + .1).toFixed(1)) + "%";
-            }
+    var highTemp = setInterval(() => {
+        for (let v = 0; v < 24; v++){
+            hightempprogress[v].style.width = (parseFloat(hightempprogress[1].style.width) + 1) + "%";
         }
-    }, setIntervalTimer)
+    }, 50)
 
     setInterval (() => {
-        if (hightempprogress[0].style.width == (data.forecast.forecastday[0].day.maxtemp_c + "%")){
-            clearInterval(hightemp);
+        if (hightempprogress[0].style.width == ((data.forecast.forecastday[0].day.maxtemp_c - (data.forecast.forecastday[0].day.maxtemp_c % 1)) + "%")){
+            clearInterval(highTemp);
         }
-    }, setIntervalTimer)
+    }, 10)
 }
 
-
-// let lowtemp0, lowtemp1, lowtemp2, lowtemp3, lowtemp4, lowtemp5, lowtemp6, lowtemp7, lowtemp8, lowtemp9, lowtemp10, lowtemp11, lowtemp12, lowtemp13, lowtemp14, lowtemp15, lowtemp16, lowtemp17, lowtemp18, lowtemp19, lowtemp20, lowtemp21, lowtemp22, lowtemp23
-// var lowtemperaturess = [lowtempprogress0, lowtempprogress1, lowtempprogress2, lowtempprogress3, lowtempprogress4, lowtempprogress5, lowtempprogress6, lowtempprogress7, lowtempprogress8, lowtempprogress9,  lowtempprogress10, lowtempprogress11, lowtempprogress12, lowtempprogress13, lowtempprogress14, lowtempprogress15, lowtempprogress16, lowtempprogress17, lowtempprogress18, lowtempprogress19, lowtempprogress20, lowtempprogress21, lowtempprogress22, lowtempprogress23]
-// var lowtemp = [lowtemp0, lowtemp1, lowtemp2, lowtemp3, lowtemp4, lowtemp5, lowtemp6, lowtemp7, lowtemp8, lowtemp9, lowtemp10, lowtemp11, lowtemp12, lowtemp13, lowtemp14, lowtemp15, lowtemp16, lowtemp17, lowtemp18, lowtemp19, lowtemp20, lowtemp21, lowtemp22, lowtemp23]
-
-// for (let i = 0; i < lowtemperaturess.length; i++){
-//     lowtemperaturess[i].style.width = "0%";
-
-
-//     if (data.forecast.forecastday[0].hour[0].temp_c > 0){
-//         lowtemp[i] = setInterval(() => {
-//             if (lowtemperaturess[i].style.width > data.forecast.forecastday[0].hour[i].temp_c) {
-//                 if (data.forecast.forecastday[0].hour[i].temp_c % 1 == 0){
-//                     lowtemperaturess[i].style.width = (parseInt(lowtemperaturess[i].style.width) - 1) + "%";
-//                 }
-//                 else if (data.forecast.forecastday[0].hour[i].temp_c % 1 != 0){
-//                     lowtemperaturess[i].style.width = ((parseFloat(lowtemperaturess[i].style.width) - .1).toFixed(1)) + "%";
-//                 }
-//             } else {
-//                 if (data.forecast.forecastday[0].hour[i].temp_c % 1 == 0){
-//                     lowtemperaturess[i].style.width = (parseInt(lowtemperaturess[i].style.width) + 1) + "%";
-//                 }
-//                 else if (data.forecast.forecastday[0].hour[0].temp_c % 1 != 0){
-//                     lowtemperaturess[i].style.width = ((parseFloat(lowtemperaturess[0].style.width) + .1).toFixed(1)) + "%";
-//                 }
-//             }
-//         }, 10)
-//         setInterval (() => {
-//             if (lowtemperaturess[i].style.width == (data.forecast.forecastday[0].hour[i].temp_c + "%")){
-//                 clearInterval(lowtemp[i]);
-//             }
-//         }, 10)
-//     } else {
-//         return null;
-//     }
-// }
-
-
-
-
+let lowtemp0, lowtemp1, lowtemp2, lowtemp3, lowtemp4, lowtemp5, lowtemp6, lowtemp7, lowtemp8, lowtemp9, lowtemp10, lowtemp11, lowtemp12, lowtemp13, lowtemp14, lowtemp15, lowtemp16, lowtemp17, lowtemp18, lowtemp19, lowtemp20, lowtemp21, lowtemp22, lowtemp23
+var lowtemperaturess = [lowtempprogress0, lowtempprogress1, lowtempprogress2, lowtempprogress3, lowtempprogress4, lowtempprogress5, lowtempprogress6, lowtempprogress7, lowtempprogress8, lowtempprogress9,  lowtempprogress10, lowtempprogress11, lowtempprogress12, lowtempprogress13, lowtempprogress14, lowtempprogress15, lowtempprogress16, lowtempprogress17, lowtempprogress18, lowtempprogress19, lowtempprogress20, lowtempprogress21, lowtempprogress22, lowtempprogress23]
+var lowtemp = [lowtemp0, lowtemp1, lowtemp2, lowtemp3, lowtemp4, lowtemp5, lowtemp6, lowtemp7, lowtemp8, lowtemp9, lowtemp10, lowtemp11, lowtemp12, lowtemp13, lowtemp14, lowtemp15, lowtemp16, lowtemp17, lowtemp18, lowtemp19, lowtemp20, lowtemp21, lowtemp22, lowtemp23]
+  
+for (let i = 0; i < lowtemperaturess.length; i++){
+    lowtemperaturess[i].style.width = "0%";
+    if (data.forecast.forecastday[0].hour[i].temp_c > 0){
+        lowtemp[i] = setInterval(() => {
+                if (data.forecast.forecastday[0].hour[i].temp_c % 1 == 0){
+                    lowtemperaturess[i].style.width = (parseInt(lowtemperaturess[i].style.width) + 1) + "%";
+                }
+                else if (data.forecast.forecastday[0].hour[i].temp_c % 1 != 0){
+                    lowtemperaturess[i].style.width = ((parseFloat(lowtemperaturess[i].style.width) + .1).toFixed(1)) + "%";
+                }
+                if (lowtemperaturess[i].style.width == (data.forecast.forecastday[0].hour[i].temp_c + "%")){
+                    clearInterval(lowtemp[i]);
+                } 
+        }, 10)
+    }
+}
 /***********************************************************************************************************************************************************/
 
 /********************************************This section is for the functionality of the emoji icons******************************************************/
@@ -393,14 +372,77 @@ if (isDay == 0){
         
 )
 
+const click2 = () => {
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=5279c1bb31344eda98d224055221002&q=${search.value}&days=3`)
+        .then(response => response.json())
+        .then(data => {
+           document.getElementById("lowtemperature00").innerHTML = data.forecast.forecastday[0].day.mintemp_c;
+           document.getElementById("lowtemperature01").innerHTML = data.forecast.forecastday[1].day.mintemp_c;
+           document.getElementById("lowtemperature02").innerHTML = data.forecast.forecastday[2].day.mintemp_c;
+
+           document.getElementById("hightemperature00").innerHTML = data.forecast.forecastday[0].day.maxtemp_c;
+           document.getElementById("hightemperature01").innerHTML = data.forecast.forecastday[1].day.maxtemp_c;
+           document.getElementById("hightemperature02").innerHTML = data.forecast.forecastday[2].day.maxtemp_c;
+
+           document.getElementById("humidity00").innerHTML = data.forecast.forecastday[0].day.avghumidity;
+           document.getElementById("humidity01").innerHTML = data.forecast.forecastday[1].day.avghumidity;
+           document.getElementById("humidity02").innerHTML = data.forecast.forecastday[2].day.avghumidity;
+
+           document.getElementById("weathericon00").src = data.forecast.forecastday[0].day.condition.icon;
+           document.getElementById("weathericon01").src = data.forecast.forecastday[1].day.condition.icon;
+           document.getElementById("weathericon02").src = data.forecast.forecastday[2].day.condition.icon;
+
+           document.getElementById("to").innerHTML = data.forecast.forecastday[0].date;
+           document.getElementById("next").innerHTML = data.forecast.forecastday[1].date;
+           document.getElementById("two").innerHTML = data.forecast.forecastday[2].date;
+
+
+           var lowtemperatures0 = [lowtemperature00, lowtemperature01, lowtemperature02]
+                for (var i = 0; i < 3; i++){
+                    lowtemperatures0[i].style.width = "0%";
+                }
+
+                if (data.forecast.forecastday[0].day.maxtemp_c > 0){
+                    var highTemp = setInterval(() => {
+                        for (let v = 0; v < 3; v++){
+                            lowtemperatures0[v].style.width = (parseFloat(lowtemperatures0[1].style.width) + 1) + "%";
+                        }
+                    }, 50)
+
+                    setInterval (() => {
+                        if (lowtemperatures0[0].style.width == ((data.forecast.forecastday[0].day.maxtemp_c - (data.forecast.forecastday[0].day.maxtemp_c % 1)) + "%")){
+                            clearInterval(highTemp);
+                        }
+                    }, 10)
+                }
+
+        })
+        // .catch(err => {
+        //     console.log(err)
+        // })       
+}
+
+// const click2 = () => {
+//     fetch(`http://api.weatherapi.com/v1/forecast.json?key=5279c1bb31344eda98d224055221002&q=${search.value}&days=3`)
+//         .then(response => response.json())
+//         .then(data => console.log("Success: ", data))
+//         // .catch(err => {
+//         //     console.log(err)
+//         // })       
+// }
+
 // const click = () => (
-//     fetch(`http://api.weatherapi.com/v1/forecast.json?key=5279c1bb31344eda98d224055221002&q=${search.value}`)
+//     fetch(`http://api.weatherapi.com/v1/forecast.json?key=5279c1bb31344eda98d224055221002&q=${search.value}&days=10`)
 //         .then(response => response.json())
 //         .then(data => console.log("Success: ", data))
 //         .catch(err => {
 //             console.log(err)
 //         })       
 // )  
-search2.addEventListener('click', () => {click(), animationsRefresh()});
-// setInterval(click, 1000);
+search2.addEventListener('click', () => {
+    click();
+    click2();
+    animationsRefresh();
+    setInterval(click, 300000);
+});
 
