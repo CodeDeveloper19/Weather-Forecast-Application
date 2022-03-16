@@ -158,7 +158,7 @@ function loading() {
     navigator.geolocation.getCurrentPosition((position) => {
         search.value = `${position.coords.latitude}, ${position.coords.longitude}`;
         click();
-        setInterval(click, 300000);
+        search.value = "";
       }, 
       () => {console.log("K")});
 };
