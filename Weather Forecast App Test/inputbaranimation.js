@@ -1,6 +1,7 @@
 var input = document.getElementById("input");
 var search = document.getElementById("search");
 var search2 = document.getElementById("search2");
+var searchIcon = document.getElementById("searchicon");
 
 const animation = () =>{
     if (!search.style.display){
