@@ -1,0 +1,448 @@
+/*For Microsoft Edge*/
+@supports (-ms-ime-align:auto) {
+    progress{
+        color: rgb(92, 92, 245);
+        width: 100%;
+    }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+    .container{
+        width: 280px;
+        height: 200px;
+    }
+
+    /****************************************This is for the fonts*********************************************/
+#option2, #option22, #option222, #option2222, #option22222, #option222222{
+    font-size: 2.625px;
+}
+
+#city, #country, .cityy h5{
+    font-size: 3px;
+}
+
+.sunsets p{
+    font-size: 2.625px;
+}
+
+#temperature, .deg {
+    font-size: 22.5px;
+}
+
+.info h2{
+    font-size: 7.5px;
+}
+
+.info p{
+    font-size: 3px; 
+}  
+
+.stuff1 li{
+    font-size: 3px;
+}
+
+.piecharts h4, .piecharts h5{
+    font-size: 2.47px;
+}
+/**********************************************************************************************************/
+
+    /**************************************************PieChart************************************************************/
+.piecharts{
+    height: 40px;
+    width: 150px;
+}
+
+.piecharts1, .piecharts2{
+    position: relative;
+    top: 10px;
+    height: 100%;
+    width: 50%;
+}
+
+.piecharts2{
+    margin-right: 10px;
+}
+
+.piechart11, .piechart12{
+    width: 25px;
+    height: 25px;
+}
+
+.box1, .box2, .box3, .box4{
+    width: .5px;
+    height: .5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/*******************************************************************************************************************/
+.weathericon{
+    height: 30px;
+    width: 30px;
+}
+
+#emoji{
+    height: 30px;
+    width: 30px;
+}
+
+#search, #search2{
+    font-size: 5px;
+}
+
+.input{
+    margin-top: 10px;
+}
+
+.search img{
+    position: relative;
+    bottom: 9px;
+}
+
+.option1{
+    position: relative;
+    top: 5px;
+}
+
+.stuff1, .stuff{
+    border-radius: 10px;
+}
+
+.container{
+    border-radius: 10px;
+}
+
+.container1{
+    border-radius: 10px 0px 0px 10px;
+}
+
+/************************************Scrollbar***************************************************/
+::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 1.5px;
+  }
+/**********************************************************************************************/
+
+.information{
+    position: absolute;
+    left: 35px;
+}
+}
+
+@media only screen and (min-width : 481px) and (max-width : 768px) {
+    .container{
+        width: 400px;
+        height: 280px;
+    }
+
+    .main{
+        top: 200px;
+        height: 70px;
+    }
+
+    .cityy img{
+        max-width: 5px;
+        max-height: 5px;
+    }
+
+    .option4 img{
+        max-width: 7px;
+        max-height: 7px;
+    }
+
+    /****************************************This is for the fonts*********************************************/
+
+    #city, #country, .cityy h5{
+    font-size: 4.5px;
+}
+
+.sunsets p{
+    font-size: 4px;
+}
+
+#temperature, .deg {
+    font-size: 26px;
+}
+
+.info h2{
+    font-size: 11px;
+}
+
+.info p{
+    font-size: 4px; 
+}  
+
+.stuff1 li{
+    font-size: 4px;
+}
+
+.piecharts h4, .piecharts h5{
+    font-size: 3.5px;
+}
+/**********************************************************************************************************/
+
+    /**************************************************PieChart************************************************************/
+.piecharts{
+    height: 40px;
+    width: 215px;
+}
+
+.piecharts1, .piecharts2{
+    position: relative;
+    top: 10px;
+    height: 100%;
+    width: 50%;
+}
+
+.piecharts2{
+    margin-right: 10px;
+}
+
+.piechart11, .piechart12{
+    width: 40px;
+    height: 40px;
+}
+
+.box1, .box2, .box3, .box4{
+    width: .8px;
+    height: .8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/*******************************************************************************************************************/
+.weathericon{
+    height: 40px;
+    width: 40px;
+}
+
+#emoji{
+    height: 30px;
+    width: 30px;
+}
+
+#search, #search2{
+    font-size: 5px;
+}
+
+.input{
+    margin-top: 10px;
+}
+
+.search img{
+    position: relative;
+    bottom: 6.5px;
+}
+
+#option2, #option22, #option222, #option2222, #option22222, #option222222{
+    position: relative;
+    top: 5px;
+}
+
+.option1{
+    position: relative;
+    top: 5px;
+    height: 8px;
+}
+
+.stuff1, .stuff{
+    border-radius: 10px;
+}
+
+.container{
+    border-radius: 10px;
+}
+
+.container1{
+    border-radius: 10px 0px 0px 10px;
+}
+
+/************************************Scrollbar***************************************************/
+::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 1.5px;
+  }
+/**********************************************************************************************/
+
+.information{
+    position: absolute;
+    left: 55px;
+}
+
+.informations h4{
+    margin: 0 2px 0 2px;
+}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 769px) and (max-width : 1024px) {
+    .container{
+        width: 600px;
+        height: 400px;
+    }
+
+    .main{
+        top: 300px;
+        height: 70px;
+        width: 100%;
+    }
+
+    .cityy img{
+        max-width: 8px;
+        max-height: 8px;
+    }
+
+    .option4 img{
+        max-width: 7px;
+        max-height: 7px;
+    }
+
+    /****************************************This is for the fonts*********************************************/
+
+    #city, #country, .cityy h5{
+    font-size: 6.5px;
+}
+
+.sunsets p{
+    font-size: 6px;
+}
+
+#temperature, .deg {
+    font-size: 35px;
+}
+
+.info h2{
+    font-size: 20px;
+}
+
+.info p{
+    font-size: 7px; 
+}  
+
+.stuff1 li{
+    font-size: 6px;
+}
+
+.piecharts h4, .piecharts h5{
+    font-size: 5.5px;
+}
+/**********************************************************************************************************/
+
+    /**************************************************PieChart************************************************************/
+.piecharts{
+    height: 80px;
+    width: 323px;
+}
+
+.piecharts1, .piecharts2{
+    position: relative;
+    top: 10px;
+    height: 100%;
+    width: 50%;
+}
+
+.piecharts2{
+    margin-right: 10px;
+}
+
+.piechart11, .piechart12{
+    width: 60px;
+    height: 60px;
+}
+
+.box1, .box2, .box3, .box4{
+    width: .8px;
+    height: .8px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/*******************************************************************************************************************/
+.weathericon{
+    height: 50px;
+    width: 50px;
+}
+
+#emoji{
+    height: 60px;
+    width: 60px;
+}
+
+#search, #search2{
+    font-size: 10px;
+}
+
+.input{
+    margin-top: 10px;
+}
+
+.search img{
+    position: relative;
+    bottom: 6.5px;
+}
+
+#option2, #option22, #option222, #option2222, #option22222, #option222222{
+    position: relative;
+    top: 5px;
+}
+
+.option1{
+    position: relative;
+    top: 5px;
+    height: 12px;
+}
+
+.stuff1, .stuff{
+    border-radius: 10px;
+}
+
+.container{
+    border-radius: 10px;
+}
+
+.container1{
+    border-radius: 10px 0px 0px 10px;
+}
+
+/************************************Scrollbar***************************************************/
+::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 1.5px;
+  }
+/**********************************************************************************************/
+
+.information{
+    position: absolute;
+    left: 80px;
+}
+
+.informations h4{
+    margin: 0 2px 0 2px;
+}
+}
+
+/* Desktops and laptops ----------- */
+/* @media only screen and (min-width : 1441px) {
+    body{
+        display: none;
+    }
+} */
