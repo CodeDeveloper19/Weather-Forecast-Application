@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Open+Sans&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="locationconsent">
+        <div id="consent">
+            <div id="consentimage">
+                <img src="other icons/animated.gif" id="animated">
+            </div>
+            <div id="consentbody">
+                <div id="consentinformation">
+                    <h1>Hey, We need your help</h1>
+                    <div id="consentmessage">
+                        <h4>We would love if you could grant us to permission to get your location.</h4>
+                        <h4>We promise, we are only going to use it to get the weather forecast in your current area</h4>
+                    </div>
+                </div>
+                <div id="consentbuttons">
+                    <button id="yes">Yes, I would love to...</button>
+                    <button id="no">No, I don't want to...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="container1">
+            <div class="main1">
+                <img src="weather/rainstorm.jpg" id="rainstorm">
+                <div class = "main">
+                    <div class="a"><p id="temperature">0</p><p class="deg">°</p>
+                    </div>
+                    <div class="b">
+                        <div class="cityy">
+                            <img src="other icons/icons8-place-marker-96.png">
+                            <p id="city">-----<h5>,</h5><h5 id="country">-------</h5></p>
+                        </div>
+                        <div class="sunsets">
+                            <div class="sunrise">
+                                <img src="weather icons/icons8-sunrise-96.png">
+                                <p id="up">-:-- -- <p>(Sunrise)</p></p>
+                            </div>
+                            <div class="sunset">
+                                <img src="weather icons/icons8-sunset-96.png">
+                                <p id="down">-:-- -- <p>(Sunset)</p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c"><img src ="emojis/icons8-face-without-mouth-96.png" id="emoji"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="stuff">
+                <div id="input">
+                    <div id="searchicon"><img src="other icons/search.svg"></div>
+                    <div><input id="search" type="text" name="nameofcity" autofocus placeholder=" Search for..."/> <!--The autofocus makes the input vertical line to be blinking--></div>
+                </div>
+                <button id="search2">Submit</button>
+                <div id="mooninformation">
+                    <div class="moonillumination" id="moonmain">
+                        <img src="other icons/full-moon.png" id="moon1">
+                        <div class="mooninfo">
+                            <div class="mooninfocontainer"><h4>Moon Illumination:<h4 id="illumination">--</h4></h4></div>
+                            <div class="mooninfocontainer"><h4>Moonrise:<h4 id="moonrise">--</h4></h4></div>
+                            <div class="mooninfocontainer"><h4>Moonset:<h4 id="moonset">--</h4></h4></div>
+                        </div> 
+                    </div>
+                    <div id="moonmain2" class="moonillumination">
+                        <img src="weather icons/icons8-empty-set-100.png" id="moon2">
+                            <h4 id="moonphase" class="mooninfo">-------</h4>
+                    </div>
+                </div>
+                <div id="weather">
+                    <img src="weather icons/icons8-empty-set-100.png" id="weathericon">
+                    <div class="info">
+                        <h2 id="condition">--- ---- --</h2>
+                        <p id="time">00:00:00 ---</p> 
+                    </div>
+                </div>
+                <div id="fullsection">
+                    <div class="piecharts">
+                        <div class="piecharts1">
+                            <img id="mypiechart1" src="weather icons/icons8-rain.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box1"></div>
+                                    <h4>Chance of Raining:</h4>
+                                    <h5 id="chanceofrain">-<h5>%</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box2"></div>
+                                    <h4>Chance of Not Raining:</h4>
+                                    <h5 id="chanceofnorain">-<h5>%</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piecharts2">
+                            <img id="mypiechart2" src="weather icons/icons8-snow.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box3"></div>
+                                    <h4>Chance of Snowing:</h4>
+                                    <h5 id="chanceofsnow">-<h5>%</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box4"></div>
+                                    <h4>Chance of Not Snowing:</h4>
+                                    <h5 id="chanceofnosnow">-<h5>%</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="piecharts00">
+                        <div class="piecharts1">
+                            <img id="mypiechart1" src="weather icons/icons8-wind.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box1"></div>
+                                    <h4>Wind Degree:</h4>
+                                    <h5 id="winddegree">-<h5>°</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box2"></div>
+                                    <h4>Wind Speed:</h4>
+                                    <h5 id="windspeed">-<h5>Kph/</h5><h5 id="windspeedmile">-<h5>mph</h5></h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box11"></div>
+                                    <h4>Wind Direction:</h4>
+                                    <h5 id="winddirection">-<h5>🧭</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piecharts2">
+                            <img id="mypiechart2" src="weather icons/rainguage.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box3"></div>
+                                    <h4>Precipitation Linear Depth:</h4>
+                                    <h5 id="precipitation">-<h5>mm</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="piecharts000">
+                        <div class="piecharts1">
+                            <img id="mypiechart1" src="weather icons/pressure.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box1"></div>
+                                    <h4>Pressure (Milibar):</h4>
+                                    <h5 id="pressure">-<h5>mb</h5></h5>
+                                </div>
+                                <div class="informations">
+                                    <div class="box2"></div>
+                                    <h4>Pressure (Inch):</h4>
+                                    <h5 id="pressure2">-<h5>in</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piecharts2">
+                            <img id="mypiechart2" src="weather icons/uv.gif">
+                            <div class="information">
+                                <div class="informations">
+                                    <div class="box3"></div>
+                                    <h4>Ultraviolet Index Level:</h4>
+                                    <h5 id="ultraviolet">-<h5>uv</h5></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="switcher">
+                    <div id="switcher1" onclick="switch1()"></div>
+                    <div id="switcher2" onclick="switch2()"></div>
+                    <div id="switcher3" onclick="switch3()"></div>
+                </div>
+            </div>
+
+            <div class="stuff1">
+                <ul style="list-style: none;" class="option1">
+                    <div id="contain">
+                        <li onclick="clicking()" id="day" class="active">Day</li>
+                        <li onclick="clicking()" id="Tridaily">Tridaily</li>
+                    </div>
+                </ul>
+                <ul style="list-style: none;" id="option2">
+                    <li class="option3">
+                        <div class="days">
+                            <p id="to">----/--/--</p>
+                        </div>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity00">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id = "weathericon00">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature00">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress00" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress00"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 id="hightemperature00">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <div class="days">
+                            <p id="next">----/--/--</p>
+                        </div>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity01">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon01">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature01">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress01" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress01"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 id="hightemperature01">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <div class="days">
+                            <p id="two">----/--/--</p>
+                        </div>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity02">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon02">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature02">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress02" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress02"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 id="hightemperature02">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                </ul>
+                <ul style="list-style: none;" id="option22">
+                    <li class="option3">
+                        <p>00:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity0">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon0">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature0">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress0" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress0" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>01:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity1">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon1">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature1">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress1" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress1" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>02:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity2">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon2">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature2">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress2" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress2" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>03:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity3">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon3">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature3">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress3" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress3" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>04:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity4">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon4">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature4">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress4" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress4" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>05:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity5">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon5"> 
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature5">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress5" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress5" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>06:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity6">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon6">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature6">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress6" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress6" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>07:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity7">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon7">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature7">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress7" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress7" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>08:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity8">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon8">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature8">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress8" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress8" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>09:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity9">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon9">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature9">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress9" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress9" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>10:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity10">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon10">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature10">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress10" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress10" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>11:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity11">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon11">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature11">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress11" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress11" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>12:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity12">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon12">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature12">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress12" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress12" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>13:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity13">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon13">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature13">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress13" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress13" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>14:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity14">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon14">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature14">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress14" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress15" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>15:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity15">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon15">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature15">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress15" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress15" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>16:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity16">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon16">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature16">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress16" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress16" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>17:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity17">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon17">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature17">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress17" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress17" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>18:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity18">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon18">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature18">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress18" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress18" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>19:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity19">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon19">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature19">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress19" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress19" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>20:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity20">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon20">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature20">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress20" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress20" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>21:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png" >
+                            <h4 id="humidity21">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon21">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature21">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress21" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress21" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>22:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity22">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon22">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature22">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress22" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress22" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                    <li class="option3">
+                        <p>23:00</p>
+                        <div class="option4">
+                            <img src="other icons/humidity.png">
+                            <h4 id="humidity23">--<h4>%</h4></h4>
+                        </div>
+                        <div class="option4">
+                            <img src="weather icons/icons8-rain-cloud-96.png" id="weathericon23">
+                        </div>
+                        <div class="option4">
+                            <h4 id="lowtemperature23">--<h4>°</h4></h4>
+                        </div>
+                        <div class="option45">
+                            <div class="lowtemperature">
+                                <div id="lowtempprogress23" class="lowtempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <div class="hightemperatures">
+                                <div id="hightempprogress23" class="hightempprogress"></div>
+                            </div>
+                        </div>
+                        <div class="option4">
+                            <h4 class="hightemperature">--<h4>°</h4></h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="errornotification">
+        <div id="notification">
+            <img src="other icons/cloud art.png">
+            <h1 id="oops">Oops!!</h1>
+            <p id="message"></p>
+            <button id="tryagain">Try Again?</button>
+        </div>
+    </div>
+    <div id="credits">
+        <div id="text"><h2 class>Made Possible With</h2></div>
+        <div class="partners">
+            <a href="https://www.weatherapi.com/" class = "weatherapi" title="Free Weather API"><img src='other icons/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"></a>
+            <a href="https://dribbble.com/shots/2934892-Summer" class = "weatherapi" title="Weather sun and cloud emoji animation"><img src='other icons/remo.png' alt="Weather emoji animation by byRemo on dribble.com"></a>
+            <a href="https://icons8.com/" class = "weatherapi" title="Icons, illustrations, photos, music, and design tools"><img src='other icons/icons8.png' alt="Icon images by icons8.com"></a>
+            <a href="https://www.flaticon.com/free-icons/moon" class = "weatherapi" title="moon and sun icons created by Freepik and Pixel perfect"><img src='other icons/flaticon.JPG' alt="Weather data by WeatherAPI.com"></a>
+            <a href="https://unsplash.com//" class = "weatherapi" title="Background Images."><img src='other icons/unsplash.png' alt="Background images by unsplash.com"></a>
+        </div>
+    </div>
+    <div id="credits2">
+        <div id="partners2">
+            <div id="closecontainer">
+                <img src="other icons/icons8-close-96.png" class="close">
+            </div>
+            <div id="partners2container">
+                <a href="https://www.weatherapi.com/" class = "weatherapi2" title="Free Weather API"><img src='other icons/weatherapi_logo.png' alt="Weather data by WeatherAPI.com"></a>
+                <a href="https://dribbble.com/shots/2934892-Summer" class = "weatherapi2" title="Weather sun and cloud emoji animation"><img src='other icons/remo.png' alt="Weather emoji animation by byRemo on dribble.com"></a>
+                <a href="https://icons8.com/" class = "weatherapi2" title="Icons, illustrations, photos, music, and design tools"><img src='other icons/icons8.png' alt="Icon images by icons8.com"></a>
+                <a href="https://www.flaticon.com/free-icons/moon" class = "weatherapi2" title="moon and sun icons created by Freepik and Pixel perfect"><img src='other icons/flaticon.JPG' alt="Weather data by WeatherAPI.com"></a>
+                <a href="https://unsplash.com//" class = "weatherapi2" title="Background Images."><img src='other icons/unsplash.png' alt="Background images by unsplash.com"></a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./weather.js"></script>
+<script src="./navigation bar functionality.js"></script>
+<script src="slider.js"></script>
+<script src="inputbaranimation.js"></script>
+<script src="credits.js"></script>
+</html>
