@@ -1,0 +1,1006 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url("weather/noaa-ZVhm6rEKEX8-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+#errornotification, #locationconsent{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    backdrop-filter: blur(60px);
+    visibility: hidden;
+}
+
+#locationconsent{
+    visibility: visible;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#consent{
+    position: relative;
+    width: 800px;
+    height: 350px;
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition-property: left, transform;
+    transition-duration: .8s;
+    transition-timing-function: ease-out;
+    left: -2000px;
+    transform: scale(.8);
+}
+
+#consentimage{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+#consentimage img{
+    max-width: 100%;
+}
+
+#consentbody{
+    font-family: 'Playfair Display', serif;
+    width: 60%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+#consentbuttons{
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#consentbuttons button{
+    width: 40%;
+    margin-right: 10%;
+    height: 30%;
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: #1a2a6c;
+    color: white;
+}
+
+#yes:hover{
+    background-color: #fdbb2d;
+    cursor: pointer;
+}
+
+#no:hover{
+    cursor: pointer;
+    background-color: #b21f1f;
+}
+
+#consentinformation{
+    height: 65%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#consentinformation h1{
+    position: absolute;
+    top: 18%;
+    font-size: 45px;
+}
+
+#consentmessage{
+    position: absolute;
+    top: 40%;
+    font-size: 14px;
+    width: 50%;
+}
+
+#notification{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#notification img{
+    position: absolute;
+    bottom: 70%;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+#tryagain{
+    position: absolute;
+    bottom: 15%;
+    width: 200px;
+    height: 50px;
+    border-radius: 30px;
+    border: 2px solid white;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    background-color: transparent;
+}
+
+#message{
+    position: absolute;
+    bottom: 45%;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    width: 300px;
+    text-align: center;
+}
+
+#oops{
+    position: absolute;
+    bottom: 55%;
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    color: white;
+}
+
+#tryagain:hover{
+    background: #fdbb2d;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+/*****************Border Radiuses of major elements ************************/
+#container, .stuff, .stuff1{
+    border-radius: 20px;
+}
+/**************************************************************************/
+
+#container{
+    display: flex;
+    height: 550px;
+    width: 1100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.background1 {
+    background: #0f0c29;  
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+}
+
+.background2 {
+    background: #1a2a6c;
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); 
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+}
+
+.container1{
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.main{
+    position: absolute;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    color:rgb(255, 255, 255);;
+    width: 100%;
+    opacity: 0;
+    animation-name: opacity;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+    animation-delay: 2.5s;
+}
+
+.a{
+    display: flex;
+    align-items: center;
+}
+
+.b{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 45%;
+}
+
+.c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sunsets img{
+    max-height: 8%; 
+    max-width: 8%;
+}
+
+.sunsets img, .cityy img{
+    padding-right: 4%;
+}
+
+#city, #country, .cityy h5 {
+    display: flex;
+    justify-content: center;
+}
+
+#country{
+    margin-left: 3%;
+}
+
+.cityy {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 15%;
+}
+
+.cityy img{
+    max-height: 80%;
+    max-width: 80%;
+}
+
+.sunsets p{
+    display: flex;
+    align-items: flex-end;
+}
+
+.sunrise, .sunset {
+    display: flex;
+    flex-direction: row;
+}
+
+.a {
+    padding: 0 2% 0 8%;
+}
+
+#emoji{
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.main1{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    animation-name: main1;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+}
+
+@keyframes main1 {
+    0%{
+        right: 400px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+
+
+#rainstorm{
+    height: 100%;
+    width: 100%;
+    -webkit-transition: all 10s ease;
+    -moz-transition: all 10s ease;
+    -o-transition: all 10s ease;
+    -ms-transition: all 10s ease;
+    transition: all 10s ease;
+}
+
+#rainstorm:hover {
+border-radius: 20px 0px 0px 20px;
+transform: scale(1.5);
+cursor: pointer;
+}
+
+/**********************************This is for the second container*****************************/
+
+.container2{
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-align{
+    position: absolute;
+    top: 86%;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+#weather{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 40%; /*******************************************************/
+    color: white;
+    display: flex;
+    opacity: 0;
+    flex-direction: row-reverse;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes opacity{
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+.info{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#weathericon{
+    max-height: 100%;
+    max-height: 100%;
+}
+
+.stuff, .stuff1{
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 600px;
+    height: 200px;
+}
+
+.option1 li:hover{
+    cursor: pointer;
+    border-bottom: 1px solid #e1ad01;
+}
+
+.active {
+    border-bottom: 1px solid white;  /*This is what makes the days, month, 3 months, e.t.c. turn the bottom blue*/
+}
+
+.stuff{
+    position: relative;
+    margin-top: 4%;
+    overflow: hidden;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.stuff1{
+    margin-top: 3%;
+    height: 280px;
+    margin-bottom: 4%;
+    overflow-x: hidden;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.option1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 45px;
+    animation-name: slideleft;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+}
+
+#contain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+}
+
+@keyframes slideleft {
+    0%{
+        left: 1000px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+#option2{
+    height: 70%;
+    margin: 0 5% 0 5%;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.days{
+    width: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.option4 img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.option3{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+    top: 300px;
+    animation-name: slideup;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideup {
+    0%{
+        top: 200px;
+    }
+    100%{
+        top: 0;
+    }
+}
+
+.option45{
+    border-right: 1px dashed rgba(0, 0, 0, 0.5);
+}
+
+#credits{
+    width: 1000px;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Rouge Script', cursive;
+    font-size: 25px;
+    color: wheat;
+}
+
+#credits2{
+    display: none;
+}
+
+#text{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.partners{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 7%;
+}
+
+.weatherapi img{
+    max-width: 80px;
+    max-height: 100%;
+}
+
+/**************************************************PieChart************************************************************/
+#fullsection{
+    position: relative;
+    height: 40%;
+    width: 300%;
+    bottom: 23%;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animation1{
+    0%{
+        left: -700px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes animation2{
+    0%{
+        left: -1400px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes animation3{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -700px;
+    }
+}
+
+@keyframes animation4{
+    0%{
+        left: -1400px;
+    }
+    100%{
+        left: -700px;
+    }
+}
+
+@keyframes animation5{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -1400px;
+    }
+}
+
+@keyframes animation6{
+    0%{
+        left: -700px;
+    }
+    100%{
+        left: -1400px;
+    }
+}
+
+
+.piecharts, .piecharts00, .piecharts000{
+    position: absolute;
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+
+.switcher{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+}
+
+#switcher1, #switcher2, #switcher3{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 10px;
+}
+
+#switcher1:hover, #switcher2:hover, #switcher3:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.piecharts00{
+    left: 700px;
+}
+
+.piecharts000{
+    left: 1400px;
+}
+
+.piecharts1, .piecharts2{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 50%;
+    padding-left: 5%;
+}
+
+#mypiechart1, #mypiechart2{
+    position: absolute;
+    left: 10%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.piechart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information{
+    position: absolute;
+    left: 40%;
+    width: 50%;
+}
+
+.informations{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.informations h4{
+    margin: 0 2% 0 2%;
+}
+
+.box1, .box2, .box11, .box3, .box4{
+    width: 5px;
+    height: 5px;
+    border: 1px solid black;
+}
+
+.box1{
+    background-color: #7689de;
+}
+
+.box2{
+    background-color: #a9dce3;
+}
+
+.box3{
+    background-color: rgb(2, 2, 143);
+}
+
+.box4{
+    background-color: #7689de;
+}
+/*******************************************************************************************************************/
+
+/******************************This is for the progress bar used for the temperature***********************************/
+
+.lowtemperature, .hightemperatures{
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    height: 25%;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.hightemperatures{
+    flex-direction: row;
+}
+
+.lowtempprogress{
+    height: 100%;
+    background-color: rgb(92, 92, 245);
+    border-radius: 10px 0 0 10px;
+}
+
+.hightempprogress, #hightempprogress00, #hightempprogress01, #hightempprogress02{
+    height: 100%;
+    background-color: red;
+    border-radius: 0 10px 10px 0;
+    /* width: 60%; */
+}
+/***********************************************************************************************************/
+.option4, .option45{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/************************For the input part ********************************/
+#input{
+    background-color: rgba(41, 40, 40, 0.1);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    left: 5%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    transition: all;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+}
+
+::placeholder { /*This changes the color of the text used as the placeholder*/
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+#search{
+    background-color: rgba(41, 40, 40, 0.1);
+    position: absolute;
+    border-radius: 0 40px 40px 0;
+    left: 15%;
+    margin-top: 30px;
+    width: 85%;
+    height: 100%;
+    bottom: 0px;
+    border: 0;
+    outline: none; /*This line of code makes the borderline to be hidden when the search bar is clicked*/
+    color: white;
+    display: none;
+}
+
+#search2{
+    position: relative;
+    width: 10%;
+    height: 30px;
+    left: 10%;
+    bottom: 15%;
+    background-color: rgba(41, 40, 40, 0.1);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    transition: all;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+}
+
+#mooninformation{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    width: 40%;
+    bottom: 33%;
+    left: 23%;
+    opacity: 0;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+    transition: all;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+}
+
+#mooninformation img{
+    max-width: 80%;
+    max-height: 80%;
+    margin-right: 5%;
+}
+
+#moon1{
+    z-index: 1;
+    transition: transform 1.5s ease;
+    width: 50px;
+    height: 50px;
+}
+
+#moon1:hover{
+    cursor: pointer;
+    transform: rotateZ(360deg);
+}
+
+.mooninfo{
+    width: 120px;
+    font-size: 8px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.mooninfocontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.moonillumination{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 5%;
+    width: 50%;
+}
+
+#search2:hover{
+    color: white;
+    cursor: pointer;
+    background-color: rgba(172, 172, 172, 0.1);
+}
+
+#searchicon{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchicon img{
+    max-width: 15px;
+    max-height: 15px;
+}
+
+#search:active{
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+#input:hover{
+    background-color: rgba(172, 172, 172, 0.1);
+    cursor: pointer;
+}
+/********************************************************************************/
+
+/****************************************This is for the fonts*********************************************/
+.info, #option2, #option22{
+    font-family: 'Lato', sans-serif;
+}
+
+#city, #country, .cityy h5{
+    font-size: 9px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.sunsets p{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 9px;
+}
+
+#temperature, .deg {
+    font-size: 55px;
+    font-family: 'Lato', sans-serif;
+}
+
+.info h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.info p{
+    font-size: 10px; 
+    font-weight: 300;
+}  
+
+#search{
+    font-size: 16px;
+}
+
+.stuff1 li{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 5px;
+    color: whitesmoke;
+}
+
+#fullsection h4, #fullsection h5{
+    font-size: 9px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+}
+
+/**********************************************************************************************************/
+
+/*************************************************Displays of the other options such as day and 3 months****************************************/
+/************************************************** Day (Hourly) *******************************************************************************/
+#option22{
+    height: 75%;
+    margin: 0 5% 0 5%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+/*******************************************************************************************************************************************/
+
+/***********************************************************************************************************************************************/
+
+
+/************************************Scrollbar***************************************************/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track{
+    background: #f1f1f1;  /********For the outer part*************/
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(207, 207, 207, 0.8); /********For the part that scrolls*************/
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+/**********************************************************************************************/
