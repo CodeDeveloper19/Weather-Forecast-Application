@@ -149,7 +149,9 @@ var hightemperature02 = document.getElementById("hightempprogress02");
 var tryAgain= document.getElementById("tryagain");
 var message = document.getElementById("message");
 
-var moonTwo = document.getElementById("moon2")
+var moonTwo = document.getElementById("moon2");
+
+const API_KEY = process.env.API_KEY;
 
 
 var animationsRefresh = () => {
@@ -178,7 +180,6 @@ function loading() {
 };
 
 
-const API_KEY = process.env.API_KEY;
 const click = (API_KEY) => {
     fetch(`http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${search.value}`)
         .then(response => response.json())
